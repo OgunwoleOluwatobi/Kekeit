@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "434725777976",
+    "firebase_url": "https://kekeit-ed7b6.firebaseio.com",
+    "project_id": "kekeit-ed7b6",
+    "storage_bucket": "kekeit-ed7b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434725777976:android:13c3c6a65bcbec53",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434725777976-ckqlsumt0n7t18pp5a508kqlsnd2rdqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "7541f117bf8be1f73bfe7eaa8a4f49e512774afa"
+          }
+        },
+        {
+          "client_id": "434725777976-88ufk0p19v4pi0qo0loc859d05c05qeb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuBcvZg2d393EStsySYUwXohQP38cQp5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434725777976-88ufk0p19v4pi0qo0loc859d05c05qeb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
