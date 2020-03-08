@@ -10,7 +10,10 @@ import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -20,6 +23,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApi;
@@ -44,7 +48,7 @@ public class Customer_map extends FragmentActivity implements OnMapReadyCallback
     LocationRequest mLocationRequest;
 
     //private Button logout;
-    LinearLayout menu;
+    LinearLayout menu, body;
     FrameLayout rel, overlay;
     ImageView pic, menuopen;
     TextView name, profile, trip, pay, set, out;
@@ -63,6 +67,11 @@ public class Customer_map extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        Window window = this.getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(this.getResources().getColor(R.color.colorAccent));
+
         /*logout = (Button)findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +85,7 @@ public class Customer_map extends FragmentActivity implements OnMapReadyCallback
         });*/
 
         menu = findViewById(R.id.menu);
+        body = findViewById(R.id.body);
         rel = findViewById(R.id.rel);
         overlay = findViewById(R.id.overlay);
         pic = findViewById(R.id.pic);
@@ -168,6 +178,37 @@ public class Customer_map extends FragmentActivity implements OnMapReadyCallback
                 regular.setVisibility(View.GONE);
                 express.setVisibility(View.GONE);
                 scroll.setVisibility(View.VISIBLE);
+            }
+        });
+
+       /* text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                body.animate().translationY(0);
+                String txt1 = text2.getText().toString().trim();
+                if (TextUtils.isEmpty(txt1)) {
+                    body.animate().translationY(125);
+                } else {
+                    body.animate().translationY(0);
+                }
+            }
+        });*/
+
+
+
+        text2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                body.animate().translationY(0);
+                text2.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    @Override
+                    public void onFocusChange(View view, boolean b) {
+                        String txt1 = text2.getText().toString().trim();
+                        if (TextUtils.isEmpty(txt1)) {
+                            body.animate().translationY(320);
+                        }
+                    }
+                });
             }
         });
 

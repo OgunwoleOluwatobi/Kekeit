@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
+    android:background="#0E3F97"
     tools:context=".MainActivity">
 
     <ImageView
@@ -21,13 +21,11 @@
 
     <ImageView
         android:id="@+id/iv2"
+        android:paddingLeft="10dp"
         android:layout_width="154dp"
         android:layout_height="84dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:src="@drawable/bulogo"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:layout_editor_absoluteX="0dp" />
 
